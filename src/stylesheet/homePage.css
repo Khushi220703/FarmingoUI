@@ -1,0 +1,157 @@
+.homepage-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  margin-left: 18%;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  bottom: 20px;
+}
+
+.homepage-container .stylish-heading {
+  color: #004d00; 
+  border: 2px solid #ffd700; 
+  padding: 10px; 
+  border-radius: 5px; 
+  text-align: center; 
+  font-family: 'Georgia', serif; 
+  font-size: 36px; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+  background: linear-gradient(to left,  #5b7820,#5b7820, #e3f4db, #dbf4db, #5b7820, #5b7820);
+  position: relative;
+  bottom: 10px;
+  margin-bottom: 50px;
+}
+
+/* Card Styling */
+.agriculture-card {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.agriculture-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Button Styling */
+.learn-more-btn-home {
+  background-color: #4CAF50;
+  margin: auto;
+  width: 70%;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-btn-home:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .homepage-container {
+      width: 100%;
+      padding: 1.5rem;
+      margin: 0%;
+      padding-top: 20%;
+  }
+
+  .stylish-heading {
+      font-size: 20px;
+      padding: 8px;
+  }
+
+  .card-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .agriculture-card {
+      width: 70%;
+  }
+
+  .card-image {
+      height: 180px;
+  }
+
+  h2 {
+      font-size: 1rem;
+  }
+
+  p {
+      font-size: 0.9rem;
+  }
+
+  .learn-more-btn-home {
+      width: 80%;
+      font-size: 0.9rem;
+      padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stylish-heading {
+      top: -10px;
+      margin-top: 10%;
+      font-size: 18px;
+  }
+
+  .agriculture-card {
+      width: 85%;
+  }
+
+  .card-image {
+      height: 160px;
+  }
+
+  h2 {
+      font-size: 1.2rem;
+  }
+
+  p {
+      font-size: 0.85rem;
+  }
+
+  .learn-more-btn-home {
+      width: 90%;
+      font-size: 0.85rem;
+  }
+}

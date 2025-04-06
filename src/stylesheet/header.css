@@ -1,0 +1,93 @@
+.header {
+    background: linear-gradient(135deg, #3e6740, #2f5230);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.logo img {
+    height: 90px;
+    position: relative;
+    top: 15px;
+}
+
+.logo-text {
+    font-family: "Georgia", serif;
+    font-style: italic;
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    margin-left: 10px;
+    position: relative;
+    bottom: 15px;
+}
+
+.authButton {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.authButton button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Added space between the profile icon and button */
+}
+
+.authButton button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.profile-icon {
+    font-size: 30px; 
+    cursor: pointer;
+    color: white;
+    width: 50px;
+    height: 50px;
+}
+
+.login{
+text-align: center;
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .logo-text {
+        display: none; /* Hide text on small screens */
+    }
+
+    .authButton button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+    }
+}

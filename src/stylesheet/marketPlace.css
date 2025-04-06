@@ -1,0 +1,168 @@
+.buy-page {
+    padding: 20px;
+  }
+  
+  .filter-container {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    flex: 1;
+  }
+  .rental-header{
+    display: flex;
+  }
+  .category-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .product-image{
+    width: 100%;
+  }
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1 0 30%; /* Flex basis for responsiveness */
+    position: relative;
+    height: 400px;
+    width: 400px;
+  }
+
+  .product-description{
+    width: 100%;
+    word-wrap: wrap;
+  }
+  .product-name-like{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+  }
+  .product-price{
+    margin-top: 7%;
+  }
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .product-like-button{
+     margin-top: 7%;
+  }
+  .product-card button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .product-card button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Modal Styles */
+  .ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  .ReactModal__Content {
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+  }
+  .buy-page {
+    padding: 20px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1 0 30%; /* Flex basis for responsiveness */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items */
+  }
+  
+  .product-details {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  
+  .review {
+    background-color: #f9f9f9;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .product-button{
+    width: 100%;
+    height: 70%;
+  }
+  
+  .search-bar, .category-select {
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px; /* Adjust width as necessary */
+  }
+  /* Modal Styling */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.ReactModal__Content {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  text-align: center;
+}
+
+.ReactModal__Content button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ReactModal__Content button:hover {
+  background-color: #45a049;
+}

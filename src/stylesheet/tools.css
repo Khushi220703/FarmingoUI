@@ -1,0 +1,88 @@
+
+.crop-tools-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 32px;
+    padding: 20px;
+    background-color: #f4f4f9; /* Light background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 98%;
+    margin: 32px 20%;
+    
+  }
+  
+  /* Title styling */
+  .crop-tools-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2f8555; /* Green color */
+    text-align: center;
+  }
+  
+  /* Flexbox container for buttons */
+  .button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  /* Button styling */
+  .button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #4CAF50;; /* Green button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button:hover {
+    background-color: #2f8555; /* Darker green on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Button alignment and margin for first button */
+  .button-left {
+    margin-left: 10px; /* Adjusted margin for the first button */
+  }
+  
+  /* Modal Styling (if needed) */
+  .modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .modal-content {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  

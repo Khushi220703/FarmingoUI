@@ -1,0 +1,219 @@
+.rentals {
+  padding: 100px 50px 50px 300px;
+  background-color: #f4f4f4;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  margin-top: 0%;
+}
+
+
+.header-container > h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+.header-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-button{
+  width: 15%;
+  height: 50px;
+}
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+.product-like-container{
+ position: absolute;
+ right: 0px;
+ width:20%;
+ border-radius: 6px;
+ background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+ 
+}
+
+.search-bar, .rental-days-input, .sort-select, .category-select {
+  flex: 1;
+  min-width: 160px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus, .rental-days-input:focus, .sort-select:hover, .category-select:hover {
+  border-color: #28a745;
+  box-shadow: 0 0 4px rgba(40, 167, 69, 0.2);
+  outline: none;
+}
+
+
+.rentals-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1px; 
+  margin-top: 15px;
+}
+
+.rental-card {
+  border-radius: 8px;
+  padding: 0.5px;
+  width:95%;
+  text-align: center;
+  height: 380px;
+  background: white;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  margin-top: 10px;
+}
+
+.rental-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* 🖼️ Image */
+.rental-card img {
+  max-width: 100%;
+  width: 100%;
+  height: 200px;
+  border-radius: 6px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.5));
+  
+}
+
+/* 🏷️ Text Details */
+.rental-card h2 {
+  font-size: 18px;
+  margin: 8px 0;
+  color: #222;
+  font-weight: 600;
+}
+
+.rental-card p {
+  font-size: 12px;
+  color: #666;
+  margin: 3px 0;
+}
+
+/* 💲 Price & Rating */
+.rental-card strong {
+  color: #333;
+}
+
+/* 🎯 Buttons */
+.rental-card button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 80%;
+  margin: auto;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10%;
+  
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.rental-card button:hover {
+  background: #218838;
+  transform: scale(1.04);
+}
+
+.rental-card button:active {
+  transform: scale(0.94);
+}
+
+/* 🎯 Buttons */
+.rental-card button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 80%;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 2px;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.rental-card button:hover {
+  background: #218838;
+  transform: scale(1.04);
+}
+
+.rental-card button:active {
+  transform: scale(0.94);
+}
+
+/* 🎯 Responsive Design */
+@media (max-width: 1024px) {
+  .rentals {
+    padding: 80px 20px; /* Reduce padding for tablets */
+  }
+  h1 {
+   
+    margin-top: 30px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar, .rental-days-input, .sort-select, .category-select {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .rentals-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .rentals {
+    padding: 70px 10px; /* Further reduce padding for mobiles */
+    
+  }
+  .rentals> h1{
+    position: relative;
+    top: 0px;
+  }
+ 
+  .filter-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+  }
+
+  .search-bar, .rental-days-input, .sort-select, .category-select {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .rentals-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .rental-card img {
+    height: 160px;
+  }
+}

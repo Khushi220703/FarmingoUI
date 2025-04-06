@@ -1,0 +1,227 @@
+.short {
+  background: linear-gradient(135deg, #1a1a1a, #333333);
+  width: 208vh;
+  height: 3400px;
+}
+
+.shorts-section {
+  padding: 20px;
+  background: linear-gradient(135deg, #232526, #414345); /* Dark gradient from dark gray to charcoal */
+  border-radius: 12px;
+  width: 35%;
+  margin: auto;
+  margin-top: 5%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: white;
+  
+}
+.back-arrow {
+  position: fixed;   /* Keeps it at the top-left corner */
+  top: 20px;         /* Distance from the top */
+  left: 20px;        /* Distance from the left */
+  font-size: 32px;   /* Arrow size */
+  color: white;      /* White arrow */
+  cursor: pointer;   /* Clickable */
+  z-index: 1000;     /* Ensures it stays above other elements */
+  transform: rotate(90deg); /* Rotates downward */
+}
+
+.back-arrow:hover {
+  color: #ccc; /* Light gray on hover */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 2rem; /* Increased font size */
+  color: #ffffff; /* Bright white for title */
+}
+.video-card-1{
+  display: flex;
+  flex-direction: row;
+}
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap between video cards */
+}
+
+.video-card {
+  background-color: rgba(255, 255, 255, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s; 
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  
+}
+
+.video-card:hover {
+  transform: scale(1.02); /* Scale effect on hover */
+}
+
+.video-player {
+  width: 86%; /* Ensure the video takes up the full width of its container */
+  height: 450px; /* Increased height for the video */
+  border-radius: 10px;
+  object-fit: cover; /* Ensures the video scales properly without stretching */
+  border: 2px solid white;
+}
+
+.video-description {
+  margin: 0px 0;
+  font-weight: bold;
+  color: #ffffff; /* Bright white for description */
+ 
+}
+.liked {
+  color: red;  
+ 
+}
+
+.video-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0px;
+  width: 90%;
+}
+video{
+  width: 800px;
+}
+.action-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #ffffff;
+  transition: color 0.2s;
+}
+.loading-spinner {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #792929;
+  background-color: #4caf50;
+}
+
+
+
+.comment-heading{
+  color: white;
+  font-size: large;
+  font-weight: 600;
+  margin: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.comments-section{
+  border: 2px solid white;
+  border-radius: 2%;
+  padding: 30px 10px;
+  width: 40%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: relative;
+  max-width: 40%;
+ 
+
+ 
+}
+.comment-form {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+  width: 95%;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #333; 
+  color: white; 
+  width: 100%;
+}
+
+.comment-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6b81; /* Bright pink button */
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 50px;
+}
+
+.comment-form button:hover {
+  background-color: #ff3d55; /* Darker pink on hover */
+}
+
+.comment-form button:focus {
+  outline: 2px solid #ff3d55; /* Outline to indicate focus */
+}
+
+.comments {
+  margin-top: 30px;
+  overflow-y: auto;
+  
+ 
+ 
+}
+.comments::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.comments::-webkit-scrollbar-thumb {
+  background-color: #4caf50; /* Color of the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.comments::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Color of the track */
+}
+
+.comment {
+  background-color: rgba(233, 236, 239, 0.2); /* Darken background for comments */
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #ffffff; /* Bright white for comment text */
+  transition: background 0.2s;
+  word-wrap: break-word; 
+  display: flex;
+  justify-content: space-between; 
+  
+  
+}
+.time-ago{
+  font-size: x-small;
+  margin: 2px;
+  color: yellow;
+  
+}
+.comment:hover {
+  background-color: rgba(233, 236, 239, 0.4); /* Darker on hover */
+}
+
+@media (max-width: 600px) {
+  .shorts-section {
+      max-width: 100%; /* Full width on smaller screens */
+  }
+
+  .video-player {
+      height: 250px; /* Smaller height for mobile */
+  }
+
+  h1 {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+}

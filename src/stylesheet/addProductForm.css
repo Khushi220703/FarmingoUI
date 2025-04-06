@@ -1,0 +1,182 @@
+/* Overlay for Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top */
+  padding-top: 5%; /* Space from top */
+  z-index: 1000;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: auto;
+  animation: slideDown 0.3s ease-out; /* Smooth entry animation */
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff3333;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Form Styles */
+.add-product-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-product-prev-btn,
+.add-product-next-btn {
+  width: 46%;
+  margin-left: 2%;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #0f4d0f;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Category Dropdown for 'Other' Option */
+select {
+  font-size: 16px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background: #218838;
+}
+
+/* Pagination Buttons */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Animation for Modal */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Close Button */
+.rent-close-btn {
+  background-color: #dc3545;
+  color: white;
+  width: 20%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rent-close-btn:hover {
+  background-color: #c82333;
+}
+
+/* Input Fields */
+input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+input[type="number"]:focus {
+  border-color: #28a745;
+  outline: none;
+}

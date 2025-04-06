@@ -1,0 +1,91 @@
+
+.modalPricePredictionion
+{
+    padding: 20px;
+    width: 400px;
+    height: 40px;
+    
+   
+  }
+  
+
+  .modal-titlePricePrediction {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+ 
+  .modal-formPricePrediction {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  
+  .modal-labelPricePrediction {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+ 
+  .modal-inputPricePrediction {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+
+  .submit-btnPricePrediction {
+    padding: 12px 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+
+  .submit-btnPricePrediction:hover {
+    background-color: #45a049;
+  }
+  
+ 
+  .error-messagePricePrediction {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+
+  .loading-messagePricePrediction {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 15px;
+  }
+  
+ 
+  .resultPricePrediction {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .result-textPricePrediction {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  
+  .modal-inputPricePrediction {
+    padding: 10px;
+    font-size: 16px;
+  }

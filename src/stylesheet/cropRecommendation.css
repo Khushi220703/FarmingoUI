@@ -1,0 +1,328 @@
+.container-crop-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f4f4f4;
+  padding: 20px;
+  width: 100%;
+  margin-top: 50px;
+  margin-left: 250px;
+}
+
+.crop-recommendation-container {
+  width: 60%;
+  max-width: 750px;
+  padding: 25px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #4caf50;
+  text-align: center;
+}
+.crop-form-row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+h2 {
+  font-size: 22px;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Form Grid for Two Columns */
+.recommendation-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.crop-form-group {
+  flex: 1;
+  width: 50%; /* Ensures two fields per row */
+  text-align: left;
+  margin-right: 40px;
+}
+
+.recommendation-form label {
+  font-weight: bold;
+  color: #2e5439;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.recommendation-form input {
+  width: 100%;
+  padding: 12px; /* Increase padding */
+  font-size: 16px; /* Increase font size */
+  height: 45px; /* Set a fixed height */
+  border-radius: 6px;
+  border: 2px solid #b2dfdb;
+  transition: border-color 0.3s;
+}
+
+.recommendation-form input:focus {
+  border-color: #00796b;
+  outline: none;
+}
+
+.submit-button {
+  width: 100%;
+  background: linear-gradient(to right, #4caf50, #388e3c);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #388e3c, #2e7d32);
+}
+
+/* Recommendation Result */
+.recommendation-output {
+  background: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border-left: 5px solid #2e7d32;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.recommended-crop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.recommended-crop-card {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  min-width: 250px;
+}
+
+.crop-name {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+.recommended-crop-card {
+  background: #ffffff; 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.recommended-crop-card:hover {
+  transform: scale(1.02);
+}
+
+.crop-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4CAF50; /* Green for agriculture theme */
+}
+
+.crop-description {
+  font-size: 16px;
+  color: #555555;
+}
+
+.go-back-button {
+  background: #007BFF;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.go-back-button:hover {
+  background: #0056b3;
+}
+
+/* Make container responsive
+@media (max-width: 1024px) {
+  .container-crop-form {
+    margin-left: 0;
+    padding: 15px;
+  }
+}
+
+.crop-recommendation-container {
+  width: 60%;
+  max-width: 750px;
+  padding: 25px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #4caf50;
+  text-align: center;
+}
+
+/* Adjust width on smaller screens */
+@media (max-width: 768px) {
+  .crop-recommendation-container {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+h2 {
+  font-size: 22px;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Form Grid for Two Columns */
+.recommendation-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 46%;
+  text-align: left;
+}
+
+/* Full width on smaller screens */
+@media (max-width: 600px) {
+  .recommendation-form {
+    flex-direction: column;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+}
+
+.recommendation-form label {
+  font-weight: bold;
+  color: #2e5439;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.recommendation-form input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 2px solid #b2dfdb;
+  transition: border-color 0.3s;
+}
+
+.recommendation-form input:focus {
+  border-color: #00796b;
+  outline: none;
+}
+
+.submit-button {
+  width: 100%;
+  background: linear-gradient(to right, #4caf50, #388e3c);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #388e3c, #2e7d32);
+}
+
+/* Recommendation Result */
+.recommendation-output {
+  background: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border-left: 5px solid #2e7d32;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.recommended-crop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.recommended-crop-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  min-width: 250px;
+}
+
+/* Responsive adjustments for the crop card */
+@media (max-width: 768px) {
+  .recommended-crop-card {
+    width: 90%;
+    margin-top: 15px;
+  }
+}
+
+.recommended-crop-card:hover {
+  transform: scale(1.02);
+}
+
+.crop-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.crop-description {
+  font-size: 16px;
+  color: #555555;
+}
+
+.go-back-button {
+  background: #007BFF;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+.crop-image{
+  width: 100%;
+}
+.go-back-button:hover {
+  background: #0056b3;
+}
+ 

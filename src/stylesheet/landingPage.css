@@ -1,0 +1,272 @@
+.landing-page {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  width: 100%; /* Changed to 100% for responsiveness */
+}
+
+.hero-section {
+  position: relative; 
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  overflow: hidden; 
+}
+
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+}
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px); 
+}
+
+
+.hero-section video {
+  position: absolute;
+  top: 50%; /* Center video vertically */
+  left: 50%; /* Center video horizontally */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1; /* Below the cover */
+  transform: translate(-50%, -50%); /* Center the video */
+  object-fit: cover; /* Ensure the video covers the section */
+}
+
+.videoCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 93, 28, 0.4); /* Semi-transparent black */
+  z-index: 1; /* Above the video but below the content */
+}
+
+.hero-section .hero-content {
+  position: relative; /* Position relative for the text overlay */
+  z-index: 2; /* Ensure text is above the video */
+}
+
+.hero-section .hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+   color: #192119;
+}
+
+.hero-section .hero-content p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #192119;
+}
+
+.hero-section .cta-button {
+  background: linear-gradient(135deg, #3e6740, #2f5230); /* Adds a subtle gradient for depth */
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.features-section{
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #edf6ed; 
+}
+
+.features-section h2, .how-it-works-section h2, .testimonials-section h2, .cta-section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #2f5230;
+}
+
+.features, .steps, .testimonials {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; 
+  
+  
+}
+
+.feature, .step, .testimonial {
+  max-width: 290px;
+  margin: 20px; /* Add margin for spacing */
+}
+
+.feature h3, .step h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.features-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #edf6ed;
+
+}
+
+.feature-card p{
+  color: #202220;
+  font-weight: 600;
+ 
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #548f57, #2f5230); 
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
+  transition: transform 0.3s, box-shadow 0.3s; /* Added shadow transition */
+  color: #fff;
+  width: 20%;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Moves the card up */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.feature-image {
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 15px; /* Space below image */
+}
+
+.slick-dots {
+  bottom: -30px; /* Position the dots */
+}
+
+.slick-prev, .slick-next {
+  z-index: 1; /* Ensure arrows are above the cards */
+}
+
+.testimonial {
+  font-style: italic;
+}
+
+.testimonial h4 {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #4caf50;
+}
+
+.testimonials-section {
+  overflow: hidden; 
+  white-space: nowrap; 
+  position: relative; 
+  height: 300px; 
+  background-color: #edf6ed;
+  padding: 20px; 
+}
+
+.testimonials {
+  display: inline-block; 
+  animation: scroll 50s linear infinite; /* Animation for scrolling */
+}
+
+.testimonial {
+  display: inline-block; /* Allow horizontal alignment */
+  width: 300px; /* Width of each testimonial */
+  margin-right: 50px; /* Spacing between testimonials */
+  padding: 20px; /* Padding inside the card */
+  border-radius: 20px; /* Rounded corners for bubble effect */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  font-style: italic; /* Italic style for testimonials */
+  position: relative; /* For pseudo-elements if needed */
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+/* Different background colors for each testimonial */
+.testimonial:nth-child(odd) {
+  background-color: #e8f5e9; 
+}
+
+.testimonial:nth-child(even) {
+  background-color: #a5d6a7; 
+}
+
+.testimonial:hover {
+  transform: scale(1.05); 
+}
+
+.testimonial h4 {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #388e3c; 
+}
+
+.testimonial p {
+  color: #424242; 
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
+}
+
+.cta-button {
+  background-color:#2f5230;
+  color: white;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  width: 50%;
+  margin: auto;
+}
+
+.cta-section {
+  position: relative; 
+  color: white;
+  text-align: center;
+  padding: 60px 20px; 
+  overflow: hidden; 
+}
+
+.cta-section video {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto; 
+  z-index: 1;
+  transform: translate(-50%, -50%); /* Center the video */
+  object-fit: cover; /* Ensure the video covers the section */
+}
+
+.cta-section .videoCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 97, 32, 0.3); 
+  z-index: 2; 
+}
+
+.cta-section h2 {
+  z-index: 3; 
+  position: relative; 
+  color: #192119;
+}
+
+.cta-section .cta-button {
+  z-index: 3; /* Ensure the button is above everything */
+  position: relative; /* Required for z-index to take effect */
+}
+

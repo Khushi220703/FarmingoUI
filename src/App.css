@@ -1,0 +1,63 @@
+.App {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack elements vertically */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.header {
+  flex: 0 1 auto; /* Allow the header to take space based on its content */
+}
+
+.main-content {
+  display: flex; 
+  flex: 1; 
+ 
+}
+
+.signup {
+  flex: 1; /* Allow the signup to take the remaining space */
+  display: flex; /* Center content vertically and horizontally */
+  align-items: center;
+  justify-content: center;
+}
+
+.error-message{
+  font-size: small;
+  color: red;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+  border-top: 4px solid green;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+button:disabled {
+  pointer-events: none; 
+  opacity: 0.6; 
+  cursor: not-allowed; 
+}
+
+button:disabled:hover {
+  background-color: inherit; 
+  color: inherit;
+  border: inherit; 
+}
+
+a{
+  text-decoration: none;
+}

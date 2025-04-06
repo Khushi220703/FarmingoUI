@@ -1,0 +1,113 @@
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #dbf4db; /* Light green background */
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    height: 440px; /* Allow height to be auto */
+    width: 440px; /* Width of the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #e0f7da, #004d00);
+    padding: 30px;
+    opacity: 0.9;
+}
+
+.signupForm form {
+    width: 400px;
+    height: 450px;
+}
+
+/* Form heading styling */
+.signupForm h2 {
+    text-align: center;
+    color: #0b4f0b;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+}
+
+/* Label styling */
+.signupForm label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+    color: #072907;
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Input styling */
+.signupForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border and shadow */
+}
+
+/* Adding focus style to input fields */
+.signupForm input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Adding a subtle glow effect on focus */
+}
+
+/* Password input container styling */
+.password-input {
+    position: relative; /* Make the container relative for absolute positioning of the icon */
+    margin-bottom: 20px; /* Add margin for spacing between fields */
+}
+
+/* Password input field styling */
+.password-input input {
+    padding: 10px 40px 10px 10px; /* Add padding to accommodate the icon */
+    
+}
+
+/* Icon styling */
+.password-input .icon {
+    position: absolute; /* Position the icon absolutely within the input container */
+    right: 10px; /* Position the icon to the right */
+    top: 100%; /* Center the icon vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    color: #004d00;
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+}
+
+/* Button styling */
+.signupForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s; 
+    margin: auto;
+}
+
+/* Hover effect on the button */
+.signupForm button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Media queries for better responsiveness */
+@media (max-width: 768px) {
+    .signupForm {
+        width: 90%; /* Make the form responsive */
+    }
+}

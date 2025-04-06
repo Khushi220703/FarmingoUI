@@ -1,0 +1,132 @@
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #dbf4db; /* Light green background */
+    width: 220vh;
+    
+}
+
+.loginBook {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden; /* Ensures no overflow from child elements */
+    background: linear-gradient(to bottom right, #e0f7da, #004d00); 
+    opacity: 0.95;
+}
+
+.loginBook > form {
+    background: linear-gradient(to bottom right, #e0f7da, #004d00); 
+    padding: 30px;
+    border-radius: 0 10px 10px 0; /* Rounded corners on one side */
+    color: #072907;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 430px;
+    height: 410px;
+    transition: transform 0.3s ease; /* Add a transition effect for scaling */
+}
+
+/* Animation on hover */
+.loginBook > form:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+/* Heading styling */
+.loginBook > form h2 {
+    text-align: center;
+    color: #0b4f0b;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+}
+
+/* Label styling */
+.loginBook > form label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+    color: #072907;
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Input styling */
+.loginBook > form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border and shadow */
+}
+
+/* Adding focus style to input fields */
+.loginBook > form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Adding a subtle glow effect on focus */
+}
+
+
+.loginBook > form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s; 
+    margin: auto;
+}
+
+
+form button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Image styling */
+.image {
+    width: 500px;
+    height: 400px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px; /* Rounded corners on the left side */
+}
+
+.password-input > span{
+  
+    margin-top: -40px;
+}
+@media (max-width: 768px) {
+    .loginBook {
+        flex-direction: column; 
+        width: 90%;
+        height: auto; 
+        margin-top: 100px;
+        margin-left: -10%;
+    }
+    
+    .image {
+        width: 100%; 
+        height: auto; 
+    }
+
+    
+}

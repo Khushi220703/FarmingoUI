@@ -1,0 +1,88 @@
+/* Styling for the Product Details Page */
+.product-details-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-carousel {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .product-info {
+    text-align: center;
+  }
+  
+  .product-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+    color: #e53935;
+    margin-bottom: 20px;
+  }
+  
+  .product-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  .favorite {
+    background-color: #f50057;
+    color: white;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  .product-description, .product-usage {
+    margin-top: 20px;
+  }
+  
+  .product-description h3, .product-usage h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .product-description p, .product-usage ul {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .product-usage ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
