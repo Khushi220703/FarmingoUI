@@ -1,70 +1,98 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Farmingo – A MERN + ML Integrated Smart Farming Platform
 
-## Available Scripts
+Farmingo is a unified web-based platform built with the MERN stack and integrated with Machine Learning to empower farmers with intelligent insights, resource sharing, and community-driven support. It bridges the gap between modern agricultural technology and farmers by combining prediction tools, marketplaces, and social features.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Key Features
+- 🌱 **Crop Recommendation:** ML-based prediction of the most suitable crops based on soil & environmental factors.  
+- 🌾 **Fertilizer Recommendation:** Suggests optimal fertilizers using soil type, nutrients, and crop type.  
+- 📈 **Crop Price Forecasting:** Month-wise price predictions to help farmers make informed market decisions.  
+- 🛒 **Buy & Rent Marketplace:** Farmers can list, rent, or purchase equipment and resources.  
+- 📝 **Blogs & Lessons:** A space to share farming experiences, tutorials, and videos.  
+- 🎬 **Shorts (Videos):** Community-driven short video content for knowledge exchange.  
+- 📊 **Dashboard:** Track activities, rented tools, liked posts, and ML predictions.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
+- **Frontend:** React.js, React Router, Axios  
+- **Backend:** Node.js, Express.js, JWT Authentication  
+- **Database:** MongoDB (Atlas/Local)  
+- **Machine Learning:** Python, Flask, Scikit-learn  
+- **Deployment:** Vercel (Frontend), Render (Backend)  
+- **Tools:** Postman, MongoDB Compass, VS Code  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation & Setup
 
-### `npm run build`
+Clone the repository and install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<pre>
+git clone https://github.com/Khushi220703/FarmingoUI
+cd farmingo
+npm install
+npm run dev
+</pre>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
+- Register/Login to access the platform.
+- Use the Crop/Fertilizer tools for predictions.
+- Explore the marketplace to buy or rent tools.
+- Post blogs, videos, or shorts to share experiences.
+- Track your activities on the dashboard.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Role & Contributions
+- Designed and developed a responsive UI using React.js.
+- Integrated Flask ML APIs for crop, fertilizer, and price predictions.
+- Implemented marketplace functionality (buy/rent/list products).
+- Added community features: blogs, lessons, and short videos.
+- Ensured authentication & secure user sessions with JWT.
 
-### `npm run eject`
+## Challenges & Learnings
+- Building ML models that balance accuracy and real-time performance.
+- Handling cross-origin requests (CORS) between Flask and React.
+- Optimizing responsive UI for farmers with varying digital literacy.
+- Learned integration of ML predictions with full-stack web apps.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Future Improvements
+- 🌿 Crop disease detection using deep learning & image classification.
+- 🌦 Real-time soil & weather data integration.
+- 🏷 Government scheme visibility based on crops/regions.
+- 🌍 Multilingual support & offline mode for rural adoption.
+- 📊 Continuous model training with real-time farmer inputs.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Results
+- Crop Recommendation Model: Naive Bayes – 99% accuracy
+- Fertilizer Recommendation Model: Random Forest – 96.6% accuracy
+- Crop Price Prediction: Random Forest Regressor – 93% accuracy
+- Predictions generated within ~1 second, suitable for real-time use.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Skills Demonstrated
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+MERN Stack · Machine Learning Integration · Flask API · Real-Time Prediction · Data-Driven UI/UX · RESTful APIs · Responsive Web Design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Screenshots
 
-### Code Splitting
+1.	Signup: Users enter basic details (name, email), receive an email verification link, and set their password.
+<img width="606" height="658" alt="Screenshot 2025-04-25 131418" src="https://github.com/user-attachments/assets/64325877-2de3-4322-ad1a-d86dd8874d79" />
+<img width="821" height="624" alt="Screenshot 2025-04-25 135112" src="https://github.com/user-attachments/assets/f6d60d74-8e62-4029-bb5e-106daa4d8a53" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2.	Login: Users log in to access the platform.
+   <img width="791" height="800" alt="Screenshot 2025-04-25 131428" src="https://github.com/user-attachments/assets/3724b8d5-9429-4d80-8577-d3cd870c21c6" />
 
-### Analyzing the Bundle Size
+3.	Home Page: The top section displays a list of all types of agriculture (e.g., horticulture, aquaculture, floriculture, organic farming, etc.). Each category is presented in a card format with a brief                    introduction, relevant icons/images, and a "Learn More" button.
+   <img width="1917" height="906" alt="Screenshot 2025-04-25 131449" src="https://github.com/user-attachments/assets/4ec0c703-b347-4f75-ac82-dcaab104298f" />
+  	
+4.	Crop Recommendation: Users input environmental data, and the system returns crop suggestions.
+   Crop recommendation form
+<img width="1917" height="920" alt="Screenshot 2025-04-25 131955" src="https://github.com/user-attachments/assets/1f3758f3-072a-4ac8-99c9-1563b1cbe631" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Crop recommendation form output
+<img width="1916" height="898" alt="Screenshot 2025-04-25 131944" src="https://github.com/user-attachments/assets/b3b8a3ff-2cb5-4b01-8c82-c2b0f96d9b61" />
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5.	Fertilizer Recommendation: Users input crop and soil data, and the system returns suitable fertilizer recommendations.
