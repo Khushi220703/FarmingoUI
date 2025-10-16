@@ -8,8 +8,8 @@ import emptyCartImage from "../assets/images/shoppingCartEmpty.gif";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { decryptToken } from "../utils/tokenDecryption";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -20,7 +20,7 @@ const Cart = () => {
     const navigate = useNavigate();
     const userId = decryptToken();
     const [totalPrice, setTotalPrice] = useState(0);
-   
+
     useEffect(() => {
         const fetchCartItems = async () => {
             setLoading(true);
@@ -91,7 +91,11 @@ const Cart = () => {
         setLoading(true);
         try {
             await axios.post(`${process.env.REACT_APP_API_URL}api/buy/item/${userId}`);
+         
             toast.success("Purchase successful! Your cart has been cleared.");
+            
+
+
             setCartItems([]);
             setCurrentPage(0);
 
@@ -99,7 +103,7 @@ const Cart = () => {
             console.error("Error processing purchase:", error);
             toast.error("Failed to process purchase. Please try again.");
         }
-        finally{
+        finally {
             setLoading(false);
         }
     };
@@ -182,8 +186,8 @@ const Cart = () => {
                                         <span className="quantity">{item.quantity}</span>
                                         <button className="btn btn-update" onClick={() => updateQuantity(item._id, 1)}>+</button>
                                     </td>
-                                    <td data-label="Price">${item.isRent ? item.productId.rentalPrice : item.productId.price}</td>
-                                    <td data-label="Total">${item.isRent ? item.rentalDuration * item.productId.rentalPrice : item.quantity * item.productId.price}</td>
+                                    <td data-label="Price">₹{item.isRent ? item.productId.rentalPrice : item.productId.price}</td>
+                                    <td data-label="Total">₹{item.isRent ? item.rentalDuration * item.productId.rentalPrice : item.quantity * item.productId.price}</td>
                                     <td data-label="Is Rent">{item.isRent ? "Yes" : "No"}</td>
                                     <td data-label="Duration" className="duration-controls">
                                         {item.isRent ? (
@@ -205,7 +209,7 @@ const Cart = () => {
 
                     </table>
                     <div className="cart-footer">
-                        <h3 className="total-price">Total Price: ${totalPrice}</h3>
+                        <h3 className="total-price">Total Price: ₹{totalPrice}</h3>
                         <button className="btn buy-now" onClick={handleBuyNow}>Buy Now</button>
                     </div>
                     <ReactPaginate
@@ -234,6 +238,7 @@ const Cart = () => {
                     </div>
                 </div>
             )}
+            <ToastContainer />
         </div>
     );
 };

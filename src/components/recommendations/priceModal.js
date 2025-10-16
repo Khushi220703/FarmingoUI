@@ -68,7 +68,10 @@ const PricePredictionModal = ({ onClose }) => {
   }, [crop]); // Re-fetch when crop changes
 
   const data = {
-    labels: Array.from({ length: 12 }, (_, i) => `Month ${i + 1}`), // Months 1 to 12
+    labels: [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ],
     datasets: [
       {
         label: 'Predicted Price (in INR)',
@@ -79,6 +82,7 @@ const PricePredictionModal = ({ onClose }) => {
       }
     ]
   };
+  
 
   const options = {
     responsive: true,
@@ -88,7 +92,13 @@ const PricePredictionModal = ({ onClose }) => {
   };
 
   return (
-    <Modal open={true} onClose={onClose} center>
+    <Modal
+      open={true}
+      onClose={onClose}
+      center
+      showCloseIcon={true}
+      closeIcon={<span className="custom-close-icon">✖</span>}
+    >
       <div className="modalPricePrediction">
         <h2 className="modal-titlePricePrediction">Price Prediction</h2>
 
@@ -125,8 +135,12 @@ const PricePredictionModal = ({ onClose }) => {
                 </button>
               )}
             </div>
+            
           )}
         </div>
+        <p className="model-reference">
+      <span className='important-symbol'>*</span> Price predictions are generated using a Machine Learning model trained on historical crop market data from the <strong>Agmarket Dataset from kaggle (2010–2025)</strong>.
+    </p>
       </div>
     </Modal>
   );

@@ -1,0 +1,170 @@
+.modalFertilizerPredict {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.modal-titleFertilizerPredict {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.modal-formFertilizerPredict {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.modal-labelFertilizerPredict {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.modal-inputFertilizerPredict {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submit-btnFertilizerPredict {
+    padding: 12px 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    grid-column: span 2;
+    margin-top: 15px;
+}
+
+.submit-btnFertilizerPredict:hover {
+    background-color: #45a049;
+}
+
+.error-messageFertilizerPredict {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.loading-messageFertilizerPredict {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.resultFertilizerPredict {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.result-textFertilizerPredict {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.modal-inputFertilizerPredict {
+    padding: 10px;
+    font-size: 16px;
+}
+.modalFertilizerPredict {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.modal-titleFertilizerPredict {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.modal-formFertilizerPredict {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two fields per row */
+    gap: 15px;
+}
+
+.modal-labelFertilizerPredict {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.modal-inputFertilizerPredict {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submit-btnFertilizerPredict {
+    padding: 12px 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    grid-column: span 2; /* Button spans both columns */
+    margin-top: 15px;
+}
+
+.submit-btnFertilizerPredict:hover {
+    background-color: #45a049;
+}
+
+.error-messageFertilizerPredict {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.loading-messageFertilizerPredict {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.resultFertilizerPredict {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.result-textFertilizerPredict {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.modal-inputFertilizerPredict {
+    padding: 10px;
+    font-size: 16px;
+}
+.custom-close-icon {
+    font-size: 1.5rem;
+    color: #444;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .custom-close-icon:hover {
+    color: crimson;
+  }
+  

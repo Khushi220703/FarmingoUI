@@ -12,7 +12,8 @@ const Header = ({ toggleSidebar }) => {
   const handleLogout = () => {
     localStorage.removeItem("farmingoToken");
     setIsAuthenticated(false);
-    navigate("/login");
+   navigate("/login", { replace: true });
+
   };
 
   const handleProfileClick = () => {

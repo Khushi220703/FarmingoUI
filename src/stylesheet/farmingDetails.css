@@ -14,7 +14,7 @@ body {
 .farmingDetails-container {
   max-width: 95%;
   width: 1150px;
-  margin: 70px auto;
+  margin: 110px auto;
   padding: 20px;
   background-color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -176,7 +176,7 @@ body {
   .farmingDetails-container {
       width: 100%;
       max-width: 95%;
-      margin-top: 10%;
+      margin-top: 30%;
       left: 0%;
   }
 

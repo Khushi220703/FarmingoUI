@@ -81,6 +81,7 @@ const HomePage = () => {
           marginPagesDisplayed={2}
           pageRangeDisplayed={3}
           onPageChange={handlePageClick}
+           forcePage={currentPage} 
           containerClassName={'pagination'}
           activeClassName={'active'}
           previousClassName={'previous'}

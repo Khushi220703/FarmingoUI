@@ -25,7 +25,7 @@ const FarmingDetails = () => {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_API_URL}api/homePage/getAgricultureTypeExplanationData/${id}`);
                 setFarming(response.data[0]);
-                console.log(response.data);
+                
             } catch (error) {
                 console.error("There is an error from the server side", error);
             }finally {
@@ -41,7 +41,6 @@ const FarmingDetails = () => {
         const recomendingProducts = async () => {
           
             try {
-
                 const response = await axios.get(`${process.env.REACT_APP_API_URL}api/rentAndBuy/recommendedProductsForHome`, {
                     params: { agricultureType: farming.name }
                 });
@@ -59,7 +58,6 @@ const FarmingDetails = () => {
         const recomendingLessons = async () => {
           
             try {
-
                 const response = await axios.get(`${process.env.REACT_APP_API_URL}api/lesson/getRecommendingLesson`, {
                     params: { title: farming.name }
                 });
@@ -264,7 +262,7 @@ const FarmingDetails = () => {
                                 <div className="product-details">
                                     <h2 className="product-title">{product.productName}</h2>
                                     <p className="product-description">{truncateDescription(product.description)}</p>
-                                    <p className="product-price"><strong>Price:</strong> ${product.price}</p>
+                                    <p className="product-price"><strong>Price:</strong> ₹{product.price}</p>
                                     <p className="product-rating"><strong>Rating:</strong> {product.rating} ⭐</p>
                                     <button className="recommend-add-to-cart-btn" onClick={() => handleBuy(product._id)}>
                                         Add to Cart

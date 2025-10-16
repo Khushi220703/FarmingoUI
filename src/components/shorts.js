@@ -44,20 +44,22 @@ const Shorts = () => {
 
   // Load first video on mount
   useEffect(() => {
-    fetchVideoData(); // Removed argument (1) as it’s not needed
+    window.scrollTo(0, 0);
+
+    fetchVideoData(); 
   }, []);
 
   // Infinite Scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 && !loading) {
-        fetchVideoData(page); // ✅ Always pass the latest page
+        fetchVideoData(page); 
       }
     };
   
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [page, loading]); // ✅ Depend on `page` & `loading`
+  }, [page, loading]); 
   
 
   return (

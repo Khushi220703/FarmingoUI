@@ -208,7 +208,7 @@ function Rentals() {
               <div key={product.id} className="rental-card">
                 <div className="rental-header">
                                   <span className="product-like-container" onClick={() => handleLike(product._id)}>
-                                    {product.likedBy.includes(userId) ? <AiFillHeart color="red" size={26} /> : <AiOutlineHeart size={26} />}
+                                    {product.likedBy.includes(userId) ? <AiFillHeart color="red" size={26} /> : <AiOutlineHeart size={26} style={{ color: "red" }}/>}
                                     <span className="like-count"> {product.likes ? product.likes : 0}</span>
                                   </span>
                                   <img src={product.images} alt={product.productName} />
@@ -217,9 +217,9 @@ function Rentals() {
                 
                 <h2>{product.productName}</h2>
                 <p>{truncateDescription(product.description)}</p>
-                <p><strong>Price per Day:</strong> ${product.rentalPrice}</p>
+                <p><strong>Price per Day:</strong> ₹{product.rentalPrice}</p>
       
-                <p><strong>Total Cost:</strong> ${(product.rentalPrice * rentalDays).toFixed(2)}</p>
+                <p><strong>Total Cost:</strong> ₹{(product.rentalPrice * rentalDays).toFixed(2)}</p>
                 {product.postedBy === userId ?<button disabled>Your Product</button>:<button onClick={() => rentNow(product._id)}>Add to cart</button>}
                
               </div>

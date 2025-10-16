@@ -6,7 +6,11 @@
   font-family: 'Arial', sans-serif;
   margin-top: 0%;
 }
-
+.like-count{
+  color:rgb(252, 10, 10);
+  font-weight: 600;
+  font-size: large;
+}
 
 .header-container > h1 {
   text-align: center;

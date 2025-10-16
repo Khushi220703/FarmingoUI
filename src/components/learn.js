@@ -110,7 +110,7 @@ const Tutorials = () => {
                   {tutorial.likedBy.includes(userId) ? (
                     <AiFillHeart color="red" size={26} />
                   ) : (
-                    <AiOutlineHeart size={26} />
+                    <AiOutlineHeart size={26}  style={{color:"red"}}/>
                   )}
                   <span className="like-count">{tutorial.likes || 0}</span>
                 </span>

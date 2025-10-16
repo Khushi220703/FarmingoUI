@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation,useNavigate } from "react-router-dom";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Sidebar from "./components/sidebar";
@@ -28,8 +28,11 @@ import { AuthProvider } from "./utils/authContext";
 import ProtectedRoute from "./utils/protectedRoutes";
 import AddLearn from "./components/addLearn";
 import ChemicalAndPrice from "./components/recommendations/chemicalAndPrice";
+import 'react-toastify/dist/ReactToastify.css';
+
 const AppContent = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,6 +41,13 @@ const AppContent = () => {
     token: "",
   });
   const isAuthenticated = !!localStorage.getItem("farmingoToken");
+
+  useEffect(() => {
+    if (isAuthenticated && location.pathname === "/") {
+      navigate("/homePage");
+    }
+  }, [isAuthenticated, location.pathname, navigate]);
+
   // Define paths that should hide the Header and Sidebar
   const hideHeader = ["/login", "/signup", "/setPassword/:token/:email/:name", "/shorts"];
   const hideSidebar = ["/", "/login", "/signup", "/setPassword/:token/:email/:name", "/shorts"];
@@ -56,7 +66,7 @@ const AppContent = () => {
       { isHeaderVisible && <Header />}
       <div className="main-content">
         {isAuthenticated &&  isSidebarVisible && <Sidebar />}
-        <ToastContainer position="top-right" autoClose={3000} />
+        <ToastContainer position="top-right" autoClose={2500} closeButton={false}  />
         <Routes>
 
           <Route path="/" element={<LandingPage />} />

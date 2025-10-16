@@ -26,6 +26,13 @@ export const validateMobile = (mobile) =>{
     return null;
 }
 
+export const validateLoginPassword = (password) => {
+  if (!password) {
+    return "Please enter your password";
+  }
+  return null;
+};
+
 export const validatePassword = (password) =>{
 
     if(!password){
@@ -55,7 +62,23 @@ export const validatePH = (ph) =>{
     if(!ph){
         return 'Please enter ph value.';
     }
-    else if(ph < 0 && ph > 15){
+    else if (ph < 0 || ph > 14) {
+
         return 'PH value should be in between 1 to 14.'
     }
 }
+
+export const validateNumericField = (value, fieldName, min, max) => {
+    if (value === '') {
+      return `Please enter ${fieldName}.`;
+    }
+    const numericValue = parseFloat(value);
+    if (isNaN(numericValue)) {
+      return `${fieldName} must be a number.`;
+    }
+    if (numericValue < min || numericValue > max) {
+      return `${fieldName} must be between ${min} and ${max}.`;
+    }
+    return null;
+  };
+  

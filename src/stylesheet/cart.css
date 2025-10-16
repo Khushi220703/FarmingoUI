@@ -64,15 +64,34 @@ h2 {
 
 .quantity-controls, .duration-controls {
   display: flex;
-  align-items: center;
+  align-items: center;  
+  justify-content: center;
   gap: 10px;
-  min-width: 120px;
 }
 
 .quantity {
   color: black;
   position: relative;
   top: 12px;
+}
+
+.quantity-controls .quantity,
+.duration-controls .quantity {
+  position: static;      /* Remove the manual top offset */
+  min-width: 30px;       /* Keeps numbers uniform */
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn-update {
+  width: 30px;           /* Ensure square buttons */
+  height: 30px;
+  padding: 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {

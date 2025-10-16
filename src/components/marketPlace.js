@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../stylesheet/rent.css";
 import Modal from "react-modal";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
 import { decryptToken } from "../utils/tokenDecryption";
 import axios from "axios";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
@@ -211,7 +211,7 @@ function Buy() {
             <div key={product._id} className="rental-card">
               <div className="rental-header">
                 <span className="product-like-container" onClick={() => handleLike(product._id)}>
-                  {product.likedBy.includes(userId) ? <AiFillHeart color="red" size={26} /> : <AiOutlineHeart size={26} />}
+                  {product.likedBy.includes(userId) ? <AiFillHeart color="red" size={26} /> : <AiOutlineHeart size={26} style={{ color: "red" }}/>}
                   <span className="like-count"> {product.likes ? product.likes : 0}</span>
                 </span>
                 <img src={product.images} alt={product.productName} />
@@ -220,7 +220,7 @@ function Buy() {
               <h2>{product.productName}</h2>
               <p>{truncateDescription(product.description)}</p>
               <p>
-                <strong>Price:</strong> ${product.price}
+                <strong>Price:</strong> ₹{product.price}
               </p>
 
               {product.postedBy === userId ? <button disabled >Your Product</button> : <button onClick={() => handleBuy(product._id)}>
@@ -249,7 +249,7 @@ function Buy() {
           {/* </div> */}
         </div>
       )}
-     
+     <ToastContainer />
     </div>
   );
 }

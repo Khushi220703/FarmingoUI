@@ -34,15 +34,21 @@ const MonthlyPurchaseChart = () => {
   return (
     <div className="chart-container">
       <h2 className="chart-title">Monthly Item Purchase Cost</h2>
-      <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" />
-          <YAxis />
-          <Tooltip />
-          <Bar dataKey="cost" fill="#28a745" barSize={40} radius={[5, 5, 0, 0]} />
-        </BarChart>
-      </ResponsiveContainer>
+      {data.length === 0 ? (
+        <div className="no-data-message" style={{color:"grey"}}>
+          You have no purchase history yet.
+        </div>
+      ) : (
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="month" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="cost" fill="#28a745" barSize={40} radius={[5, 5, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      )}
     </div>
   );
 };

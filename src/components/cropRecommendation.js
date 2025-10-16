@@ -16,7 +16,7 @@ const CropRecommendationForm = () => {
   });
 
   const [error, setError] = useState({
-    soilTypeError: "",
+   
     pHError: "",
     temperatureError: "",
     humidityError: "",
@@ -39,7 +39,7 @@ const CropRecommendationForm = () => {
   };
   const validateForm = (formData) =>{
     let temperatureError = '', humidityError = '', rainfallError = '', nitrogenError = '', phosphorusError = '', potassiumError = '';
-    let soilTypeError = validateName(formData.soilType);
+    
     let pHError = validatePH(formData.pH);
    
     if(!formData.temperature){
@@ -60,10 +60,10 @@ const CropRecommendationForm = () => {
     if(!formData.potassium){
         potassiumError = "Enter potassium."
     }
-    setError({soilTypeError,pHError,temperatureError,humidityError,rainfallError,nitrogenError,phosphorusError,potassiumError});
+    setError({pHError,temperatureError,humidityError,rainfallError,nitrogenError,phosphorusError,potassiumError});
    console.log(error);
    
-    return !(soilTypeError || pHError || temperatureError || humidityError || rainfallError || nitrogenError || phosphorusError || potassiumError);
+    return !(pHError || temperatureError || humidityError || rainfallError || nitrogenError || phosphorusError || potassiumError);
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -83,7 +83,7 @@ const CropRecommendationForm = () => {
       return;
    setBtnLoader(true);
    try {
-    const response = await fetch(`${process.env.REACT_APP_FLASK_API_URL}recommend`, {
+    const response = await fetch(`${process.env.REACT_APP_FLASK_API_URL}/recommend`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestData),
@@ -123,17 +123,7 @@ const CropRecommendationForm = () => {
         <h2>Crop Recommendation System</h2>
         {recommendation ? <form className="recommendation-form" onSubmit={handleSubmit}>
   <div className="crop-form-row">
-    <div className="crop-form-group">
-      <label>Soil Type</label>
-      <input
-        type="text"
-        className="input-soilType"
-        name="soilType"
-        value={formData.soilType}
-        onChange={handleChange}
-        placeholder="e.g. Loamy"
-      />
-    </div>
+    
     <div className="crop-form-group">
       <label>pH Level</label>
       <input
@@ -147,6 +137,18 @@ const CropRecommendationForm = () => {
         max="14"
         step="0.1"
         style={{marginTop:"5px"}}
+      />
+    </div>
+
+    <div className="crop-form-group">
+      <label>Potassium Content (K)</label>
+      <input
+        type="number"
+        className="input-potassium"
+        name="potassium"
+        value={formData.potassium}
+        onChange={handleChange}
+        placeholder="e.g. 40"
       />
     </div>
   </div>
@@ -213,17 +215,7 @@ const CropRecommendationForm = () => {
         placeholder="e.g. 30"
       />
     </div>
-    <div className="crop-form-group">
-      <label>Potassium Content (K)</label>
-      <input
-        type="number"
-        className="input-potassium"
-        name="potassium"
-        value={formData.potassium}
-        onChange={handleChange}
-        placeholder="e.g. 40"
-      />
-    </div>
+    
   </div>
 
   <button type="submit" className="submit-button" disabled={btnLoader}>{btnLoader? "Generating Recommendation...":"Get Recommendation"}</button>
@@ -285,7 +277,22 @@ const CropRecommendationForm = () => {
 
                 <button onClick={() => setRecommendation(1)}>Go back</button>
           </div>}
+          <div className="model-reference">
+  <p style={{ fontSize: '0.85rem', marginTop: '1rem', color: '#555' }}>
+    🌾 Crop recommendation dataset sourced from{' '}
+    <a
+      href="https://figshare.com/articles/dataset/Crop_Recommendation_dataset/26308696?file=47707906"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: '#007BFF', textDecoration: 'underline' }}
+    >
+      this dataset on Figshare
+    </a>.
+  </p>
+</div>
+
       </div>
+      
     </div>
   );
 };

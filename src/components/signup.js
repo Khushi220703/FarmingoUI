@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { validateEmail, validateName } from '../utils/formValidation';
 import axios from "axios";
 import { useAuth } from "../utils/authContext";
+import {ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = ({ formData, setFormData }) => {
     
@@ -35,21 +37,36 @@ const Signup = ({ formData, setFormData }) => {
     };
 
     const handleSubmit = async (e) => {
+        
         e.preventDefault();
         setBtnLoader(true);
         if (validateForm(formData)) {
             try {
                 const response = await axios.post(`${process.env.REACT_APP_API_URL}api/email/get-verified`, formData);
                 
+                
                 if (response.status === 200) {
                     localStorage.setItem("email", formData.email);
                     localStorage.setItem("name", formData.name);
                     localStorage.setItem("verifyToken", response.token);
                     login(response.token);
-                    console.log("Data added successfully! Please check your email to verify.");
+                    toast.success("Data added successfully! Please check your email to verify.");
+                   
+                }
+                else if(response.status === 409){
+                    toast.error("Email id already exits.");
                 }
             } catch (error) {
-                console.log(`There was an error from the server side: ${error}`);
+                
+               if (error.response && error.response.status === 409) {
+        toast.error(error.response.data.message || "Email already exists!");
+      } else if (error.response && error.response.status === 400) {
+        toast.error("Please fill out all required fields.");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+
+      console.error("Error from server:", error);
             }
             finally{
                 setBtnLoader(false);

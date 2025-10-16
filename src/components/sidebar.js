@@ -1,10 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../stylesheet/sidebar.css"; 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // get current path
+
+  const links = [
+    { path: "/homePage", icon: "fas fa-home", label: "Home" },
+    { path: "/crop-recommendation", icon: "fas fa-seedling", label: "Crop Recommendation" },
+    { path: "/market-place", icon: "fas fa-shopping-cart", label: "Buy" },
+    { path: "/rent", icon: "fas fa-home", label: "Rent" },
+    { path: "/learn", icon: "fas fa-book", label: "Learn" },
+    { path: "/shorts", icon: "fas fa-video", label: "Shorts" },
+    { path: "/cart", icon: "fas fa-shopping-basket", label: "Cart" },
+  ];
 
   return (
     <>
@@ -18,41 +29,16 @@ const Sidebar = () => {
           <i className="fas fa-times"></i>
         </div>
 
-        <div className="sidebar-item">
-          <Link to="/homePage">
-            <i className="fas fa-home"></i> Home
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/crop-recommendation">
-            <i className="fas fa-seedling"></i> Crop Recommendation
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/market-place">
-            <i className="fas fa-shopping-cart"></i> Buy
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/rent">
-            <i className="fas fa-home"></i> Rent
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/learn">
-            <i className="fas fa-book"></i> Learn
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/shorts">
-            <i className="fas fa-video"></i> Shorts
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/cart">
-            <i className="fas fa-shopping-basket"></i> Cart
-          </Link>
-        </div>
+        {links.map((link) => (
+          <div
+            key={link.path}
+            className={`sidebar-item ${location.pathname === link.path ? "active" : ""}`}
+          >
+            <Link to={link.path}>
+              <i className={link.icon}></i> {link.label}
+            </Link>
+          </div>
+        ))}
       </div>
     </>
   );

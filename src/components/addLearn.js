@@ -170,7 +170,7 @@ const LearnForm = ({ isOpen, setIsModalOpen, userId }) => {
     <>
 
       {isOpen && (
-        <div className="modal" >
+        <div className="modal" style={{paddingTop:"150px"}} >
           <div className="modal-content">
             <span className="close" onClick={onClose}>
               &times;

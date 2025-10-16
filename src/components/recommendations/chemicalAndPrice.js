@@ -3,9 +3,11 @@ import ChemicalModal from './chemicalModal';
 import PriceModal from './priceModal';
 import '../../stylesheet/tools.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
+import FertilizerModal from './FertilizerModal';
 const CropTools = () => {
   const [isChemicalOpen, setIsChemicalOpen] = useState(false);
   const [isPriceOpen, setIsPriceOpen] = useState(false);
+  const [isFertilizerOpen,setIsFertilizerOpen] = useState(false);
   const navigate = useNavigate();
   return (
     <div className="crop-tools-container">
@@ -18,11 +20,17 @@ const CropTools = () => {
         >
           Crop Recommendation
         </button>
-        <button 
+        {/* <button 
           onClick={() => setIsChemicalOpen(true)} 
           className="button button-left"
         >
           Chemical Requirement
+        </button> */}
+        <button 
+          onClick={() => setIsFertilizerOpen(true)} 
+          className="button button-left"
+        >
+          Fertilizer Recommendation
         </button>
         <button 
           onClick={() => setIsPriceOpen(true)} 
@@ -33,8 +41,12 @@ const CropTools = () => {
       </div>
 
       {/* Modals */}
-      {isChemicalOpen && (
+      {/* {isChemicalOpen && (
         <ChemicalModal onClose={() => setIsChemicalOpen(false)} />
+      )} */}
+
+      {isFertilizerOpen && (
+        <FertilizerModal onClose={() => setIsFertilizerOpen(false)} />
       )}
 
       {isPriceOpen && (

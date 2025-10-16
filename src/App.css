@@ -61,3 +61,7 @@ button:disabled:hover {
 a{
   text-decoration: none;
 }
+
+.important-symbol{
+  color: red;
+}
