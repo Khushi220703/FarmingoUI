@@ -1,33 +1,49 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-  }
-  
-  .app-container {
-    
+}
+
+.app-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     left: 250px;
-    top: 70px;
-    width: 1285px;
-    height: 200px;
+    top: 90px;
+    width: calc(100%);
+    max-width: 1350px;
     transition: background 0.5s ease-in-out;
-  }
-  
-  
-  .weather-info{
-    margin-top: -100px;
-    display: flex;
-    flex-direction: row;
-    height: 100px;
-    justify-content: space-evenly;
-    padding: 0px;
-  }
+    height: auto;
+    padding: 10px;
+}
 
-  .modal-overlay {
+.weather-card {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.weather-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.weather-info div {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 10px;
+    width: 220px;
+    text-align: center;
+}
+
+/* Modal styles */
+.modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -38,7 +54,6 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 999;
-    margin-top: 40px;
 }
 
 .modal-content {
@@ -63,11 +78,33 @@ body {
     padding: 8px 15px;
     border: none;
     border-radius: 6px;
-    background-color:  #0f640f;
+    background-color: #0f640f;
     color: white;
     cursor: pointer;
 }
 
 .modal-button:hover {
-    background-color:  #0b4f0b;
+    background-color: #0b4f0b;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .weather-info div {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        left: 0;
+       width: 100%;
+        padding-top: 20px;
+        padding: 5px;
+        background-size: contain;
+        background-position: top center;
+    }
+    .weather-info div {
+        width: 90%;
+        padding: 8px;
+    }
 }

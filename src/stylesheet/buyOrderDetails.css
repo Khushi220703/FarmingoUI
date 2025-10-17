@@ -1,60 +1,118 @@
 .orders-container {
-    width: 95%;
-    margin: 20px 22%;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+  padding: 20px;
+  margin-left: 300px; /* space for sidebar */
+  box-sizing: border-box;
+}
+
+.orders-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Desktop Table */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th, .orders-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.orders-table th {
+  background: #287423;
+  color: white;
+}
+
+/* Mobile Cards */
+.mobile-cards {
+  display: none; /* hidden on desktop */
+}
+
+.order-card,
+.rental-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Update buttons */
+.update-btn {
+  padding: 5px 10px;
+  background: #287423;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.update-btn:hover {
+  background: #287423;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  padding: 5px 10px;
+  background: #4caf50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination li.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination li.active {
+  background-color: #287423;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .desktop-table {
+    display: none; /* hide desktop table */
   }
-  
-  .orders-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+
+  .mobile-cards {
+    display: block; /* show mobile cards */
   }
-  
-  .orders-table {
-    width: 100%;
-    border-collapse: collapse;
+
+  .orders-container {
+    margin-left: 0;
+    padding: 10px;
   }
-  
-  .orders-table th,
-  .orders-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-  }
-  
-  .orders-table th {
-    background-color: #287423;
-    color: white;
-    font-size: 16px;
-  }
-  
-  .orders-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .orders-table tbody tr:hover {
-    background-color: #f1f1f1;
-  }
-  .orders-table .warning {
-    color: #d13838; 
-    font-weight: bold;
-  }
-  
-  .update-btn {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
+
+  /* Optional: reduce padding and font size for mobile cards */
+  .order-card,
+  .rental-card {
+    padding: 8px;
     font-size: 14px;
+    
   }
-  
-  .update-btn:hover {
-    background-color: #218838;
+
+  .update-btn {
+    padding: 4px 8px;
+    font-size: 12px;
   }
- 
+
+  .pagination li {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}

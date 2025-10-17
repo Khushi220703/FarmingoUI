@@ -185,6 +185,7 @@ h2 {
   .crop-recommendation-container {
     width: 90%;
     padding: 20px;
+    margin-left: 0px;
   }
 }
 
@@ -213,6 +214,7 @@ h2 {
 @media (max-width: 600px) {
   .recommendation-form {
     flex-direction: column;
+     
   }
 
   .form-group {
@@ -289,6 +291,9 @@ h2 {
 
 /* Responsive adjustments for the crop card */
 @media (max-width: 768px) {
+  .container-crop-form{
+    margin-left: 0px;
+  }
   .recommended-crop-card {
     width: 90%;
     margin-top: 15px;

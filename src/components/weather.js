@@ -15,10 +15,11 @@ import {
 const WeatherApp = () => {
     const [weather, setWeather] = useState(null);
     const [theme, setTheme] = useState("day");
-    const [modalVisible, setModalVisible] = useState(false); // show only if user denies location
+    const [modalVisible, setModalVisible] = useState(false);
     const [city, setCity] = useState("");
 
     const API_KEY = "1337e768ca4ec4e2f334905b5102965e";
+
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -26,11 +27,7 @@ const WeatherApp = () => {
                 fetchWeatherByCoords(latitude, longitude);
             },
             (err) => {
-                console.warn("User denied location access:", err);
-                // Only show modal if user denies
-                if (err.code === 1) { // 1 = PERMISSION_DENIED
-                    setModalVisible(true);
-                }
+                if (err.code === 1) setModalVisible(true); // PERMISSION_DENIED
             }
         );
     }, []);
@@ -55,10 +52,9 @@ const WeatherApp = () => {
             );
             setWeather(response.data);
             updateTheme();
-            setModalVisible(false); // hide modal once city weather is loaded
+            setModalVisible(false);
         } catch (err) {
-            console.error("City fetch error:", err);
-            alert("City not found. Please try again."); // simple alert for invalid city
+            alert("City not found. Please try again.");
         }
     };
 
@@ -79,15 +75,14 @@ const WeatherApp = () => {
                 backgroundImage: theme === "day" ? `url(${day})` : `url(${night})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                height: "40vh",
                 opacity: "0.9"
             }}
         >
-            {/* Modal: only shows if user denied location */}
+            {/* Modal */}
             {modalVisible && (
                 <div className="modal-overlay">
                     <div className="modal-content">
-                        <h3>Location access denied. Enter your city to get weather:</h3>
+                        <h3>Location access denied. Enter your city:</h3>
                         <form onSubmit={handleCitySubmit}>
                             <input
                                 type="text"
@@ -97,9 +92,7 @@ const WeatherApp = () => {
                                 className="modal-input"
                                 autoFocus
                             />
-                            <button type="submit" className="modal-button">
-                                Get Weather
-                            </button>
+                            <button type="submit" className="modal-button">Get Weather</button>
                         </form>
                     </div>
                 </div>
@@ -107,71 +100,39 @@ const WeatherApp = () => {
 
             {/* Weather Card */}
             {weather && (
-                <div className="weather-card" style={{ width: "1250px" }}>
+                <div className="weather-card">
                     <div className="weather-info">
-                        <div className="weather-info-humidity"
-                            style={{
-                                backgroundColor: theme === "day" ? "rgba(163, 163, 241, 0.4)" : "rgba(229, 105, 229, 0.4)",
-                                position: "relative",
-                                left: "10px",
-                                borderRadius: "10px",
-                                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                                color: "white",
-                                width: "200px",
-                                textAlign: "center",
-                                height:"120px"
-                            }} 
-                        >
-                            <p> <WiHumidity size={30} color={"black"}/>  Humidity: {weather.main.humidity}%</p>
-                            <p> <WiStrongWind size={30} color={"white"}/>  Wind Speed: {weather.wind.speed} m/s</p>
-                            <p> <WiBarometer size={30} color={"black"}/> Pressure: {weather.main.pressure} hPa</p>
+                        {/* Humidity & Wind & Pressure */}
+                        <div style={{ 
+                            backgroundColor: theme === "day" ? "rgba(163, 163, 241, 0.4)" : "rgba(229, 105, 229, 0.4)"
+                        }}>
+                            <p><WiHumidity size={30} color={"black"} /> Humidity: {weather.main.humidity}%</p>
+                            <p><WiStrongWind size={30} color={"white"} /> Wind: {weather.wind.speed} m/s</p>
+                            <p><WiBarometer size={30} color={"black"} /> Pressure: {weather.main.pressure} hPa</p>
                         </div>
 
-                        <div>
-                            <div className="weather-info-location"
-                                style={{
-                                    backgroundColor: theme === "day" ? "rgba(163, 163, 241, 0.4)" : "rgba(229, 105, 229, 0.4)",
-                                    borderRadius: "10px",
-                                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                                    color: "white",
-                                    width: "400px",
-                                    textAlign: "center",
-                                    marginBottom:"20px"
-                                }}
-                            >
-                                <h2>{weather.name}, {weather.sys.country}</h2>
-                                <p>{weather.weather[0].description}</p>
-                            </div>
-
-                            <div className="weather-info-temp"
-                                style={{
-                                    backgroundColor: theme === "day" ? "rgba(163, 163, 241, 0.4)" : "rgba(229, 105, 229, 0.4)",
-                                    position: "relative",
-                                    left: "100px",
-                                    borderRadius: "10px",
-                                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                                    color: "white",
-                                    width: "200px",
-                                    textAlign: "center"
-                                }}
-                            >
-                                <h3> <WiThermometer size={40} color={"blue"}/> {weather.main.temp}°C</h3>
-                                <p>Feels Like: {weather.main.feels_like}°C</p>
-                            </div>
+                        {/* Location */}
+                        <div style={{ 
+                            backgroundColor: theme === "day" ? "rgba(163, 163, 241, 0.4)" : "rgba(229, 105, 229, 0.4)"
+                        }}>
+                            <h2>{weather.name}, {weather.sys.country}</h2>
+                            <p>{weather.weather[0].description}</p>
                         </div>
 
-                        <div className="weather-info-sun" style={{
-                            backgroundColor: theme === "day" ? "rgba(163, 163, 241, 0.4)" : "rgba(229, 105, 229, 0.4)",
-                            position: "relative",
-                            left: "100px",
-                            borderRadius: "10px",
-                            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-                            color: "white",
-                            width: "200px",
-                            textAlign: "center"
-                        }} >
-                            <p><WiSunrise size={40} color={"orange"}/> Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}</p>
-                            <p><WiSunset size={40} color={"orange"}/> Sunset:  {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}</p>
+                        {/* Temperature */}
+                        <div style={{ 
+                            backgroundColor: theme === "day" ? "rgba(163, 163, 241, 0.4)" : "rgba(229, 105, 229, 0.4)"
+                        }}>
+                            <h3><WiThermometer size={40} color={"blue"} /> {weather.main.temp}°C</h3>
+                            <p>Feels Like: {weather.main.feels_like}°C</p>
+                        </div>
+
+                        {/* Sunrise & Sunset */}
+                        <div style={{ 
+                            backgroundColor: theme === "day" ? "rgba(163, 163, 241, 0.4)" : "rgba(229, 105, 229, 0.4)"
+                        }}>
+                            <p><WiSunrise size={40} color={"orange"} /> Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}</p>
+                            <p><WiSunset size={40} color={"orange"} /> Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}</p>
                         </div>
                     </div>
                 </div>

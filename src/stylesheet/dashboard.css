@@ -1,62 +1,98 @@
+ 
 .dashboard-container {
-    padding: 20px;
-    background-color: #dbf4db; /* Light green background */
-    width: 220vh;
-  }
-  
-  .weather-report {
-    background: #333;
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .action-buttons button {
-    margin-right: 15px;
-    padding: 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .action-buttons button:hover {
-    background-color: #45a049;
-  }
-  
-  .user-details,
-  .product-recommendation,
-  .tutorial-recommendation {
-    margin-bottom: 20px;
-  }
-  
-  .recommendations {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .tables-section {
-    margin-top: 20px;
-  }
-  
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .data-table th,
-  .data-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .data-table th {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  
+  padding: 20px;
+  background-color: #dbf4db; /* Light green background */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between widgets */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Weather Card */
+.weather-report {
+  background: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.action-buttons button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1 1 150px; /* Responsive button width */
+  min-width: 120px;
+}
+
+.action-buttons button:hover {
+  background-color: #45a049;
+}
+
+/* Recommendations Section */
+.recommendations {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.recommendations > div {
+  flex: 1 1 300px; /* Minimum width 300px */
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* User Details and Product/Tutorial Recommendations */
+.user-details,
+.product-recommendation,
+.tutorial-recommendation {
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Tables Section */
+.tables-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Table Container for Horizontal Scroll */
+.data-table-container {
+  overflow-x: auto;
+}
+
+/* Tables */
+.data-table {
+  width: 100%;
+  min-width: 600px; /* Ensure scroll on small screens */
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #4caf50;
+  color: white;
+  text-align: left;
+}
+
