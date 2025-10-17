@@ -144,7 +144,7 @@ const Login = () => {
                 </div>
 
                 <button type="submit" disabled={btnLoader}>{btnLoader?"Logining":"Login"}</button>
-                <p style={{color:"green"}}>Don't have an account?<Link to="/signup" style={{textDecoration: "none", color: "#ffffff"}}><span> Signup</span></Link></p>
+                <p style={{color:"green"}} className='login-signup'>Don't have an account?<Link to="/signup" style={{textDecoration: "none", color: "#ffffff"}}><span> Signup</span></Link></p>
             </form>
            
           </div>

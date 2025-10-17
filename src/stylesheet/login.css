@@ -130,3 +130,39 @@ form button:hover {
 
     
 }
+
+@media (max-width: 300px){
+    .loginBook {
+        flex-direction: column; 
+        width: 100%;
+        height: auto; 
+        margin-top: 100px;
+       
+    }
+    .loginBook > form input {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    position: relative;
+    right: 50px;
+}
+
+.loginBook > form button {
+    width: 50%;
+    margin-left: 50px;
+}
+
+.login-signup{
+    position: relative;
+    left:-50px
+}
+
+ .icon{
+    position: relative;
+    left: 130px;
+    top:30px
+}
+
+}
